@@ -1,0 +1,6 @@
+{
+  "name": "dojo-framework-skill",
+  "description": "Dojo Framework da Performa_IT: metodologia de projeto (pré-venda a AMS), gate de desenvolvimento, bootstrap de vault e skills auxiliares de transcrição/backlog/ata — sem conteúdo de nenhum cliente específico.",
+  "version": "0.1.0",
+  "skills": "./skills/"
+}

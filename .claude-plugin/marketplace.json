@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "dojo-framework-skill",
+  "description": "Marketplace auto-hospedado do Dojo Framework da Performa_IT — metodologia de projeto, gate de desenvolvimento e skills auxiliares reutilizáveis em qualquer cliente.",
+  "owner": {
+    "name": "Performa_IT"
+  },
+  "plugins": [
+    {
+      "name": "dojo-framework-skill",
+      "description": "Metodologia Dojo Framework, bootstrap de vault, detecção de tipo de workspace e skills auxiliares (transcrição, backlog, ata de reunião), genéricas para qualquer projeto de cliente.",
+      "author": {
+        "name": "Performa_IT"
+      },
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

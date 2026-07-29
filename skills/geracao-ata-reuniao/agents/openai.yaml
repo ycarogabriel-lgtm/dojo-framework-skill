@@ -1,0 +1,4 @@
+interface:
+  display_name: "Geração de Ata de Reunião"
+  short_description: "Converte Estruturado.md em ATA executiva do projeto"
+  default_prompt: "Use $geracao-ata-reuniao para converter um Estruturado.md em uma ATA de reunião."
