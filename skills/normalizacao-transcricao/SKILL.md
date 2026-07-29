@@ -34,7 +34,10 @@ Carregar antes de processar qualquer coisa:
 | `_templates/tpl-reuniao.md` | Template caso o usuário também queira a ata |
 
 Se algum dos três arquivos de glossário não existir, **criar antes** a partir
-das transcrições estruturadas já presentes — não prosseguir sem eles.
+das transcrições estruturadas já presentes — não prosseguir sem eles. Use
+`../../templates/tpl-glossario.md`, `tpl-participantes.md` e
+`tpl-normalizacao.md` (deste pacote) como esqueleto inicial — não invente a
+estrutura livremente.
 
 ## Pipeline
 

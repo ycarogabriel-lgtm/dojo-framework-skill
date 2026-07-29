@@ -37,4 +37,22 @@ How to scaffold a brand-new Dojo vault from scratch. Use this only after `worksp
 8. **Make the skill available in the new project**, in one of two ways:
    - If this plugin is installed at the user level, nothing else is needed — the skill is already available in any workspace.
    - Otherwise, copy `skills/dojo/` (and any of the auxiliary skills the team wants — `normalizacao-transcricao`, `geracao-backlog`, `geracao-ata-reuniao`) into the new project's `.claude/skills/` and, if the team also uses Codex, into `.agents/skills/` as well.
-9. **Never invent client content.** Personas, product vision, specs, and real risks only get created as the actual project phases (pré-venda, discovery, ...) produce them — bootstrap only creates the generic skeleton and methodology assets.
+9. **Never invent client content.** Personas, product vision, specs, and real risks only get created as the actual project phases (pré-venda, discovery, ...) produce them — bootstrap only creates the generic skeleton and methodology assets. Do **not** pre-create `produto/visao/visao-do-produto.md`, `_risks/REGISTRO_RISCOS_INICIAL.md`, `_metrics/METRICAS_SUCESSO_INICIAIS.md`, `01_pre-venda/insumos/SINTESE_REUNIOES_CLIENTE.md`, `04_desenvolvimento/contexto-agentes/{CONTEXT,AGENT_RULES}.md`, or `produto/glossario/{GLOSSARIO,PARTICIPANTES,NORMALIZACAO}.md` at bootstrap time — they hold real client content that doesn't exist yet.
+
+## First real deliverables (not part of bootstrap)
+
+When the project's actual work produces these documents for the first time — later, during `01_pre-venda`/`02_discovery`/`04_desenvolvimento`, never at bootstrap — start from the matching template in `../../templates/` instead of freehanding the structure. Cross-project use confirms these shapes (including the shared frontmatter convention — see `operating-model.md`) are genuine Dojo conventions, not one-off habits:
+
+| First real deliverable | Template |
+|---|---|
+| `produto/visao/visao-do-produto.md` | `tpl-visao-produto.md` |
+| `01_pre-venda/insumos/SINTESE_REUNIOES_CLIENTE.md` | `tpl-sintese-reunioes-cliente.md` |
+| `_risks/REGISTRO_RISCOS_INICIAL.md` | `tpl-registro-riscos.md` |
+| `_metrics/METRICAS_SUCESSO_INICIAIS.md` | `tpl-metricas-sucesso.md` |
+| `04_desenvolvimento/contexto-agentes/CONTEXT.md` (initial, pre-architecture shape) | `tpl-context-inicial.md` |
+| `04_desenvolvimento/contexto-agentes/AGENT_RULES.md` (base rule set) | `tpl-agent-rules.md` |
+| `produto/glossario/GLOSSARIO.md` | `tpl-glossario.md` |
+| `produto/glossario/PARTICIPANTES.md` | `tpl-participantes.md` |
+| `produto/glossario/NORMALIZACAO.md` | `tpl-normalizacao.md` |
+
+These templates hold bracketed placeholders (`[...]`), never invented content — fill them in only with what the real project actually produced.

@@ -29,8 +29,18 @@ Alternativa sem plugin nem zip: copiar manualmente a pasta de uma skill (ex. `sk
 | `skills/normalizacao-transcricao/` | Converte transcrição bruta de reunião (Teams, `.docx`/`.txt`) no documento estruturado padrão do vault. |
 | `skills/geracao-backlog/` | Estrutura refinamentos e SPECs como histórias de backlog rastreáveis (Jira), com elegibilidade AI-DLC. |
 | `skills/geracao-ata-reuniao/` | Converte o documento estruturado de uma reunião em ATA executiva (`.docx`). |
-| `templates/` | Os 6 templates reutilizáveis do vault (ADR, reunião, risco, funcionalidade, specs, evidência de teste) + `CLAUDE.md.template`/`AGENTS.md.template` para o root do projeto novo (placeholder `{{PROJECT_NAME}}`). |
+| `templates/` | Ver tabela abaixo. |
 | `assets/` | Guias de fase (FASE 1–4), specs dos agentes AI-DLC de pré-venda (Intent Listener/Refiner, Persona Generator), template de roteiro de entrevista e config genérica do Obsidian (`obsidian-config/`). |
+
+### `templates/`
+
+| Grupo | Arquivos | Quando usar |
+|---|---|---|
+| Repetíveis (vão para `_templates/` do vault) | `tpl-adr.md`, `tpl-evidencia-teste.md`, `tpl-funcionalidade.md`, `tpl-reuniao.md`, `tpl-risco.md`, `tpl-specs.md` | Toda vez que se cria um novo artefato daquele tipo. |
+| Root do projeto (bootstrap) | `CLAUDE.md.template`, `AGENTS.md.template` | Uma vez, ao inicializar o vault (placeholder `{{PROJECT_NAME}}`). |
+| Primeiro entregável real (não é bootstrap) | `tpl-visao-produto.md`, `tpl-context-inicial.md`, `tpl-agent-rules.md`, `tpl-registro-riscos.md`, `tpl-metricas-sucesso.md`, `tpl-sintese-reunioes-cliente.md`, `tpl-glossario.md`, `tpl-participantes.md`, `tpl-normalizacao.md` | Quando o projeto real produz esses documentos pela primeira vez (pré-venda/discovery/desenvolvimento) — nunca preenchidos com conteúdo inventado no bootstrap. Ver `skills/dojo/references/project-bootstrap.md`. |
+
+Documentos de arquitetura (SAD, C4, padrões de código, infra) e conteúdo pontual (GAP reports de um épico específico, cenários de teste de uma feature específica) **não** têm template aqui — são decisões e conteúdo genuinamente específicos de cada projeto; `tpl-adr.md` já cobre o formato recorrente de registro de decisão.
 
 ## Bootstrap de um projeto novo
 

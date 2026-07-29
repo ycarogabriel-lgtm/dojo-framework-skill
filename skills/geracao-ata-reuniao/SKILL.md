@@ -62,6 +62,11 @@ Carregar antes de gerar a ATA:
 | `_assets/docs/<base> - Estruturado.md` | Fonte factual da ata |
 | Precedente mais recente em `_assets/docs/*- ATA.docx` | Modelo de formato e tom |
 
+Se algum dos três arquivos de glossário não existir ainda, siga o mesmo
+procedimento da skill `normalizacao-transcricao` para criá-los a partir de
+`../../templates/tpl-glossario.md`, `tpl-participantes.md` e
+`tpl-normalizacao.md` (deste pacote) antes de continuar.
+
 ## Saída esperada
 
 **Dois arquivos irmãos do Estruturado**, com o mesmo radical:

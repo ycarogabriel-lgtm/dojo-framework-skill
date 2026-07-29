@@ -51,6 +51,25 @@ Before implementation with an AI agent, verify the following inputs:
 
 If any required input is missing or inconsistent, ask precise questions or update the vault artifact before editing code. See `workspace-detection.md` for when this gate applies (real FE/BE codebases) versus when it doesn't (docs vault, throwaway FE prototypes).
 
+## Document Frontmatter
+
+Vault documents that represent a tracked deliverable (product vision, `CONTEXT.md`, risk register, success metrics, glossary, synthesis docs, etc.) use a consistent YAML frontmatter — confirmed across every real project this framework has run in:
+
+```yaml
+---
+phase: 01_pre-venda
+deliverable: <what this document is>
+owner: Performa_IT
+status: draft | aberto | em revisão | aprovado
+source: <what fed this document — meeting notes, prior artifacts>
+related_issues:
+version: 0.1
+last_review: <date>
+---
+```
+
+Bump `version` and `last_review` whenever the document changes meaningfully, not on every typo fix. This applies to the first-real-deliverable templates referenced from `project-bootstrap.md` (product vision, initial context, risk register, success metrics, meeting synthesis, glossary/participants/normalization) — not to the six repeatable `_templates/` artifacts, which carry their own frontmatter conventions per template.
+
 ## Agent Conduct
 
 - Read the relevant vault context before proposing changes.
