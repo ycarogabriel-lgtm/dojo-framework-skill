@@ -34,4 +34,4 @@ Alternativa sem plugin nem zip: copiar manualmente a pasta de uma skill (ex. `sk
 
 ## Bootstrap de um projeto novo
 
-Veja `skills/dojo/references/project-bootstrap.md` para o procedimento completo de scaffolding de um vault novo (estrutura de pastas de fase, templates, assets, `CLAUDE.md`/`AGENTS.md`, config inicial do Obsidian) sem inventar conteúdo de cliente. `.obsidian/` é sempre gerado localmente e nunca versionado — segue a convenção já usada no vault do SAV (config de editor é pessoal, não é artefato do projeto).
+Veja `skills/dojo/references/project-bootstrap.md` para o procedimento completo de scaffolding de um vault novo (estrutura de pastas de fase, templates, assets, `CLAUDE.md`/`AGENTS.md`, config inicial do Obsidian) sem inventar conteúdo de cliente. `.obsidian/` é sempre gerado localmente e nunca versionado — config de editor é pessoal, não é artefato do projeto.
