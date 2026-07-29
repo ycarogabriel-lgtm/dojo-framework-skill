@@ -1,0 +1,86 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Projeto
+
+**{{PROJECT_NAME}}** — projeto de cliente gerenciado pela Performa_IT usando o Dojo Framework.
+
+Este repositório é o **vault do projeto**: a memória viva da iniciativa. Não contém código-fonte. Toda decisão, artefato, spec, risco, reunião e contexto de agente vive aqui. O GitHub é a camada de execução (issues, PRs, código); este vault é a camada de memória.
+
+## Skill obrigatória
+
+Antes de qualquer trabalho neste repositório, invoque a skill `dojo`. Ela define o modelo operacional, o fluxo de trabalho e as regras de conduta para agentes neste vault.
+
+- Se o plugin `dojo-framework-skill` estiver instalado (nível de usuário ou de projeto), a skill já está disponível automaticamente — nenhuma ação adicional é necessária.
+- Caso contrário, ela deve existir localmente em `.claude/skills/dojo/SKILL.md`.
+
+## Estrutura do vault
+
+```
+01_pre-venda/        intent, escopo, riscos, proposta comercial, memória do projeto
+02_discovery/        personas, jornadas, funcionalidades, refinamentos, protótipos
+03_arquitetura/      SAD, ADRs, diagramas C4, infra, ambientes
+04_desenvolvimento/  contexto-agentes (CONTEXT.md + AGENT_RULES.md), specs, bolts, backlog
+05_testes-funcionais/ planos, evidências, defeitos, relatórios
+06_review/           pautas, atas, feedbacks, aceites
+07_ajustes-pos-review/ itens, validações, go-no-go
+08_deploy/           planos, rollback, comunicações
+09_hyper-care/       ocorrências, correções, encerramento
+10_ams/              chamados, SLAs, transição
+
+produto/             visão do produto, módulos, glossário, concorrentes
+_assets/             guias das fases (FASE 1-4.md) + specs dos agentes AI-DLC
+_decisions/          GAP reports, ADRs e decisões cross-módulo
+_templates/          templates reutilizáveis (ADR, reunião, risco, funcionalidade, specs, evidência)
+_meetings/           atas e registros de reuniões
+_risks/              registro de riscos
+_metrics/            métricas e KPIs
+_ai-sessions/        prompts, planos e aprendizados de sessões de IA
+```
+
+## Agentes AI-DLC da pré-venda
+
+Os SPECs dos agentes de pré-venda estão em `_assets/`:
+
+| Agente | Arquivo | Papel |
+|--------|---------|-------|
+| Intent Listener | `SPEC_IntentListener.md` | Espelha fielmente o que o cliente disse; nunca infere nem sugere |
+| Intent Refiner | `SPEC_IntentRefiner.md` | Refina o rascunho do intent com personas especialistas |
+| Persona Generator | `SPEC_PersonaGenerator.md` | Gera personas de domínio para o Intent Refiner |
+
+O fluxo é sequencial: **Listener → Refiner (com personas) → INTENT DO PROJETO → PROPOSTA COMERCIAL**.
+
+## Contexto de desenvolvimento
+
+Quando o projeto chegar à fase `04_desenvolvimento`, ler antes de qualquer mudança:
+
+- `04_desenvolvimento/contexto-agentes/CONTEXT.md` — intent, arquitetura, módulos, integrações e status atual
+- `04_desenvolvimento/contexto-agentes/AGENT_RULES.md` — regras obrigatórias de arquitetura, qualidade e escopo
+- `04_desenvolvimento/specs/SPEC_{FUNCIONALIDADE}.md` — spec da funcionalidade em questão
+
+Sem esses três documentos aprovados, não propor nem executar alterações de código.
+
+## Templates
+
+Todos em `_templates/`. Usar sempre ao criar novos artefatos:
+
+| Template | Quando usar |
+|----------|-------------|
+| `tpl-adr.md` | Nova decisão arquitetural |
+| `tpl-reuniao.md` | Ata de reunião |
+| `tpl-risco.md` | Novo risco identificado |
+| `tpl-funcionalidade.md` | Nova funcionalidade no discovery |
+| `tpl-specs.md` | Nova SPEC de desenvolvimento |
+| `tpl-evidencia-teste.md` | Evidência de teste funcional |
+
+## Regras de conduta do agente
+
+1. Ler contexto local antes de propor qualquer coisa.
+2. Identificar lacunas e perguntar antes de tomar decisões de produto ou arquitetura.
+3. Propor plano antes de alterar qualquer documento.
+4. Registrar decisões relevantes em `_decisions/`.
+5. Atualizar specs quando a implementação mudar o comportamento previsto.
+6. Preservar português nos artefatos do projeto.
+7. Separar explicitamente: bug, melhoria, nova feature e mudança de escopo.
+8. Nunca assumir integrações externas sem documento de arquitetura aprovado.

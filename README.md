@@ -29,7 +29,7 @@ Alternativa sem plugin nem zip: copiar manualmente a pasta de uma skill (ex. `sk
 | `skills/normalizacao-transcricao/` | Converte transcrição bruta de reunião (Teams, `.docx`/`.txt`) no documento estruturado padrão do vault. |
 | `skills/geracao-backlog/` | Estrutura refinamentos e SPECs como histórias de backlog rastreáveis (Jira), com elegibilidade AI-DLC. |
 | `skills/geracao-ata-reuniao/` | Converte o documento estruturado de uma reunião em ATA executiva (`.docx`). |
-| `templates/` | Os 6 templates reutilizáveis do vault (ADR, reunião, risco, funcionalidade, specs, evidência de teste). |
+| `templates/` | Os 6 templates reutilizáveis do vault (ADR, reunião, risco, funcionalidade, specs, evidência de teste) + `CLAUDE.md.template`/`AGENTS.md.template` para o root do projeto novo (placeholder `{{PROJECT_NAME}}`). |
 | `assets/` | Guias de fase (FASE 1–4), specs dos agentes AI-DLC de pré-venda (Intent Listener/Refiner, Persona Generator), template de roteiro de entrevista e config genérica do Obsidian (`obsidian-config/`). |
 
 ## Bootstrap de um projeto novo
