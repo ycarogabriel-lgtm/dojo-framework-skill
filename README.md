@@ -30,15 +30,17 @@ Alternativa sem plugin nem zip: copiar manualmente a pasta de uma skill (ex. `sk
 | `skills/geracao-backlog/` | Estrutura refinamentos e SPECs como histórias de backlog rastreáveis (Jira), com elegibilidade AI-DLC. |
 | `skills/geracao-ata-reuniao/` | Converte o documento estruturado de uma reunião em ATA executiva (`.docx`). |
 | `templates/` | Ver tabela abaixo. |
-| `assets/` | Guias de fase (FASE 1–4), specs dos agentes AI-DLC de pré-venda (Intent Listener/Refiner, Persona Generator), template de roteiro de entrevista e config genérica do Obsidian (`obsidian-config/`). |
+| `assets/` | Guias de fase (FASE 1–4), specs dos agentes AI-DLC de pré-venda (Intent Listener/Refiner, Persona Generator) e config genérica do Obsidian (`obsidian-config/`). |
 
 ### `templates/`
 
 | Grupo | Arquivos | Quando usar |
 |---|---|---|
-| Repetíveis (vão para `_templates/` do vault) | `tpl-adr.md`, `tpl-evidencia-teste.md`, `tpl-funcionalidade.md`, `tpl-reuniao.md`, `tpl-risco.md`, `tpl-specs.md` | Toda vez que se cria um novo artefato daquele tipo. |
+| Repetíveis (vão para `_templates/` do vault) | `tpl-adr.md`, `tpl-evidencia-teste.md`, `tpl-funcionalidade.md`, `tpl-reuniao.md`, `tpl-risco.md`, `tpl-documento-refinamento.md`, `tpl-spec-funcionalidade.md`, `tpl-design.md`, `tpl-roteiro-entrevista.md` | Toda vez que se cria um novo artefato daquele tipo. |
 | Root do projeto (bootstrap) | `CLAUDE.md.template`, `AGENTS.md.template` | Uma vez, ao inicializar o vault (placeholder `{{PROJECT_NAME}}`). |
-| Primeiro entregável real (não é bootstrap) | `tpl-visao-produto.md`, `tpl-context-inicial.md`, `tpl-agent-rules.md`, `tpl-registro-riscos.md`, `tpl-metricas-sucesso.md`, `tpl-sintese-reunioes-cliente.md`, `tpl-glossario.md`, `tpl-participantes.md`, `tpl-normalizacao.md` | Quando o projeto real produz esses documentos pela primeira vez (pré-venda/discovery/desenvolvimento) — nunca preenchidos com conteúdo inventado no bootstrap. Ver `skills/dojo/references/project-bootstrap.md`. |
+| Primeiro entregável real (não é bootstrap, um documento por projeto, mantido no lugar) | `tpl-proposta-comercial.md`, `tpl-memoria-projeto.md`, `tpl-visao-produto.md`, `tpl-context-inicial.md`, `tpl-agent-rules.md`, `tpl-registro-riscos.md`, `tpl-metricas-sucesso.md`, `tpl-sintese-reunioes-cliente.md`, `tpl-glossario.md`, `tpl-participantes.md`, `tpl-normalizacao.md` | Quando o projeto real produz esses documentos pela primeira vez (pré-venda/discovery/desenvolvimento) — nunca preenchidos com conteúdo inventado no bootstrap. Ver `skills/dojo/references/project-bootstrap.md`. |
+
+`tpl-documento-refinamento.md` substitui o antigo `tpl-specs.md`: apesar do nome antigo, ele sempre gerou o `DOCUMENTO DE REFINAMENTO` da FASE 2 (o **O QUE**), não a `SPEC_{FUNCIONALIDADE}.md` da FASE 4 (o **COMO** técnico) — que agora tem seu próprio template, `tpl-spec-funcionalidade.md`.
 
 Documentos de arquitetura (SAD, C4, padrões de código, infra) e conteúdo pontual (GAP reports de um épico específico, cenários de teste de uma feature específica) **não** têm template aqui — são decisões e conteúdo genuinamente específicos de cada projeto; `tpl-adr.md` já cobre o formato recorrente de registro de decisão.
 

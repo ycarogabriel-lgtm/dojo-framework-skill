@@ -70,8 +70,11 @@ Todos em `_templates/`. Usar sempre ao criar novos artefatos:
 | `tpl-adr.md` | Nova decisão arquitetural |
 | `tpl-reuniao.md` | Ata de reunião |
 | `tpl-risco.md` | Novo risco identificado |
-| `tpl-funcionalidade.md` | Nova funcionalidade no discovery |
-| `tpl-specs.md` | Nova SPEC de desenvolvimento |
+| `tpl-funcionalidade.md` | Nova funcionalidade no discovery (antes do refinamento) |
+| `tpl-documento-refinamento.md` | Documento de refinamento de uma funcionalidade |
+| `tpl-spec-funcionalidade.md` | Nova SPEC técnica de funcionalidade (FASE 4) |
+| `tpl-design.md` | DESIGN.md de uma jornada prototipada |
+| `tpl-roteiro-entrevista.md` | Novo roteiro de entrevista com o cliente |
 | `tpl-evidencia-teste.md` | Evidência de teste funcional |
 
 ## Regras de conduta do agente

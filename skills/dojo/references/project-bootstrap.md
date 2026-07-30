@@ -27,7 +27,7 @@ How to scaffold a brand-new Dojo vault from scratch. Use this only after `worksp
    _assets/
    ```
    Each phase folder and subfolder gets a short `README.md` stub describing its purpose (see the Phase Map in `operating-model.md` for the one-line purpose of each top-level folder).
-3. **Populate `_templates/`** with the six templates shipped alongside this skill (`../../templates/` in this package): `tpl-adr.md`, `tpl-evidencia-teste.md`, `tpl-funcionalidade.md`, `tpl-reuniao.md`, `tpl-risco.md`, `tpl-specs.md`.
+3. **Populate `_templates/`** with the repeatable templates shipped alongside this skill (`../../templates/` in this package) — each used every time a new artifact of that type is created: `tpl-adr.md`, `tpl-evidencia-teste.md`, `tpl-funcionalidade.md`, `tpl-reuniao.md`, `tpl-risco.md`, `tpl-documento-refinamento.md`, `tpl-spec-funcionalidade.md`, `tpl-design.md`, `tpl-roteiro-entrevista.md`.
 4. **Populate `_assets/`** with only the methodology assets shipped in this package (`../../assets/`): the four `FASE N - *.md` guides and the three AI-DLC pre-sales agent specs (`SPEC_IntentListener.md`, `SPEC_IntentRefiner.md`, `SPEC_PersonaGenerator.md`). Do **not** create any client-specific document here — there isn't one yet.
 5. **Add `_decisions/README.md`** and **`_ai-sessions/README.md`** with the standard conventions: ADRs and product decisions go through `tpl-adr.md` (register product decisions as hypotheses first, promote only after human approval); AI session records capture prompts, plans, decisions, and results.
 6. **Generate the root `CLAUDE.md` and `AGENTS.md`** by copying `../../templates/CLAUDE.md.template` and `../../templates/AGENTS.md.template` and substituting `{{PROJECT_NAME}}` with the project/client name. Do not freehand these files or reconstruct them from memory — the templates are the source of truth for the vault map, templates table, development-gate rules, and agent-conduct rules; drifting from them across projects is exactly the duplication problem this package exists to avoid.
@@ -37,16 +37,18 @@ How to scaffold a brand-new Dojo vault from scratch. Use this only after `worksp
 8. **Make the skill available in the new project**, in one of two ways:
    - If this plugin is installed at the user level, nothing else is needed — the skill is already available in any workspace.
    - Otherwise, copy `skills/dojo/` (and any of the auxiliary skills the team wants — `normalizacao-transcricao`, `geracao-backlog`, `geracao-ata-reuniao`) into the new project's `.claude/skills/` and, if the team also uses Codex, into `.agents/skills/` as well.
-9. **Never invent client content.** Personas, product vision, specs, and real risks only get created as the actual project phases (pré-venda, discovery, ...) produce them — bootstrap only creates the generic skeleton and methodology assets. Do **not** pre-create `produto/visao/visao-do-produto.md`, `_risks/REGISTRO_RISCOS_INICIAL.md`, `_metrics/METRICAS_SUCESSO_INICIAIS.md`, `01_pre-venda/insumos/SINTESE_REUNIOES_CLIENTE.md`, `04_desenvolvimento/contexto-agentes/{CONTEXT,AGENT_RULES}.md`, or `produto/glossario/{GLOSSARIO,PARTICIPANTES,NORMALIZACAO}.md` at bootstrap time — they hold real client content that doesn't exist yet.
+9. **Never invent client content.** Personas, product vision, specs, and real risks only get created as the actual project phases (pré-venda, discovery, ...) produce them — bootstrap only creates the generic skeleton and methodology assets. Do **not** pre-create `01_pre-venda/proposta-comercial/PROPOSTA_COMERCIAL.md`, `01_pre-venda/memoria-do-projeto/MEMORIA_DO_PROJETO.md`, `01_pre-venda/insumos/SINTESE_REUNIOES_CLIENTE.md`, `produto/visao/visao-do-produto.md`, `_risks/REGISTRO_RISCOS_INICIAL.md`, `_metrics/METRICAS_SUCESSO_INICIAIS.md`, `04_desenvolvimento/contexto-agentes/{CONTEXT,AGENT_RULES}.md`, or `produto/glossario/{GLOSSARIO,PARTICIPANTES,NORMALIZACAO}.md` at bootstrap time — they hold real client content that doesn't exist yet.
 
 ## First real deliverables (not part of bootstrap)
 
-When the project's actual work produces these documents for the first time — later, during `01_pre-venda`/`02_discovery`/`04_desenvolvimento`, never at bootstrap — start from the matching template in `../../templates/` instead of freehanding the structure. Cross-project use confirms these shapes (including the shared frontmatter convention — see `operating-model.md`) are genuine Dojo conventions, not one-off habits:
+When the project's actual work produces these documents for the first time — later, during `01_pre-venda`/`02_discovery`/`04_desenvolvimento`, never at bootstrap — start from the matching template in `../../templates/` instead of freehanding the structure. Each of these is created once per project and then maintained/updated in place (unlike the repeatable templates in step 3, which get a new file per artifact). Cross-project use confirms these shapes (including the shared frontmatter convention — see `operating-model.md`) are genuine Dojo conventions, not one-off habits:
 
 | First real deliverable | Template |
 |---|---|
-| `produto/visao/visao-do-produto.md` | `tpl-visao-produto.md` |
+| `01_pre-venda/proposta-comercial/PROPOSTA_COMERCIAL.md` | `tpl-proposta-comercial.md` |
+| `01_pre-venda/memoria-do-projeto/MEMORIA_DO_PROJETO.md` (only once the project is approved — see `FASE 1 - PREVENDA.md`) | `tpl-memoria-projeto.md` |
 | `01_pre-venda/insumos/SINTESE_REUNIOES_CLIENTE.md` | `tpl-sintese-reunioes-cliente.md` |
+| `produto/visao/visao-do-produto.md` | `tpl-visao-produto.md` |
 | `_risks/REGISTRO_RISCOS_INICIAL.md` | `tpl-registro-riscos.md` |
 | `_metrics/METRICAS_SUCESSO_INICIAIS.md` | `tpl-metricas-sucesso.md` |
 | `04_desenvolvimento/contexto-agentes/CONTEXT.md` (initial, pre-architecture shape) | `tpl-context-inicial.md` |
@@ -56,3 +58,5 @@ When the project's actual work produces these documents for the first time — l
 | `produto/glossario/NORMALIZACAO.md` | `tpl-normalizacao.md` |
 
 These templates hold bracketed placeholders (`[...]`), never invented content — fill them in only with what the real project actually produced.
+
+Two more real documents from the Development Gate are repeatable, not one-time, and belong with step 3 instead: `SPEC_{FUNCIONALIDADE}.md` (one per functionality per BOLT — `tpl-spec-funcionalidade.md`, the technical **HOW**, distinct from the `DOCUMENTO DE REFINAMENTO`'s **WHAT**) and `DESIGN.md` (one per journey — `tpl-design.md`).
