@@ -22,7 +22,7 @@ pwd && ls CONTEXT.md 04_desenvolvimento/contexto-agentes/CONTEXT.md 2>/dev/null
 
 Leia:
 1. `04_desenvolvimento/contexto-agentes/CONTEXT.md` — contexto completo do projeto
-2. O **GUIA DE REFINAMENTO** da jornada/módulo (produzido na FASE 2, Etapa 2), se existir
+2. O **GUIA DE REFINAMENTO** da jornada/módulo (produzido na FASE 2, Etapa 2 — ver `tpl-guia-refinamento.md`), se existir
 3. `DESIGN SYSTEM` do projeto — para referenciar componentes nas especificações de UI
 4. A transcrição da sessão de refinamento desta funcionalidade
 

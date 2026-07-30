@@ -41,9 +41,11 @@ Alternativa sem plugin nem zip: copiar manualmente a pasta de uma skill (ex. `sk
 
 | Grupo | Arquivos | Quando usar |
 |---|---|---|
-| Repetíveis (vão para `_templates/` do vault) | `tpl-adr.md`, `tpl-evidencia-teste.md`, `tpl-funcionalidade.md`, `tpl-reuniao.md`, `tpl-risco.md`, `tpl-documento-refinamento.md`, `tpl-spec-funcionalidade.md`, `tpl-roteiro-entrevista.md`, `tpl-ux-assessment-revisao.md` | Toda vez que se cria um novo artefato daquele tipo. |
+| Repetíveis (vão para `_templates/` do vault) | `tpl-adr.md`, `tpl-evidencia-teste.md`, `tpl-funcionalidade.md`, `tpl-reuniao.md`, `tpl-risco.md`, `tpl-guia-refinamento.md`, `tpl-documento-refinamento.md`, `tpl-spec-funcionalidade.md`, `tpl-roteiro-entrevista.md`, `tpl-ux-assessment-revisao.md` | Toda vez que se cria um novo artefato daquele tipo. |
 | Root do projeto (bootstrap) | `CLAUDE.md.template`, `AGENTS.md.template` | Uma vez, ao inicializar o vault (placeholder `{{PROJECT_NAME}}`). |
 | Primeiro entregável real (não é bootstrap, um documento por projeto, mantido no lugar) | `tpl-proposta-comercial.md`, `tpl-memoria-projeto.md`, `tpl-visao-produto.md`, `tpl-context-inicial.md`, `tpl-agent-rules.md`, `tpl-registro-riscos.md`, `tpl-metricas-sucesso.md`, `tpl-sintese-reunioes-cliente.md`, `tpl-preparacao-refinamento.md`, `tpl-hipoteses-estrategicas.md`, `tpl-lacunas-entendimento.md`, `tpl-log-decisoes.md`, `tpl-go-no-go.md`, `tpl-confidence-score.md`, `tpl-pauta-refinamento-demanda.md`, `tpl-cbs.md`, `tpl-entregaveis-candidatos.md`, `tpl-design.md` + `tpl-design-draft.md`, `tpl-glossario.md`, `tpl-participantes.md`, `tpl-normalizacao.md` | Quando o projeto real produz esses documentos pela primeira vez (pré-venda/discovery/desenvolvimento) — nunca preenchidos com conteúdo inventado no bootstrap. Ver `skills/dojo/references/project-bootstrap.md`. |
+
+`tpl-guia-refinamento.md` é novo: a FASE 2 (Etapa 2) sempre descreveu o `GUIA DE REFINAMENTO` como saída obrigatória, gerada automaticamente pelo agente antes de cada sessão de refinamento, mas o pacote nunca teve um template para ele — a estrutura foi extraída de um guia de refinamento real já usado em projeto, generalizada e limpa de qualquer conteúdo específico de cliente.
 
 `tpl-documento-refinamento.md` substitui o antigo `tpl-specs.md`: apesar do nome antigo, ele sempre gerou o `DOCUMENTO DE REFINAMENTO` da FASE 2 (o **O QUE**), não a `SPEC_{FUNCIONALIDADE}.md` da FASE 4 (o **COMO** técnico) — que agora tem seu próprio template, `tpl-spec-funcionalidade.md`.
 
