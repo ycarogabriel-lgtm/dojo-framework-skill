@@ -48,6 +48,8 @@ Os SPECs dos agentes de pré-venda estão em `_assets/`:
 
 O fluxo é sequencial: **Listener → Refiner (com personas) → INTENT DO PROJETO → PROPOSTA COMERCIAL**.
 
+Complementares a esse fluxo (skills, não SPECs — não substituem os agentes acima): `consolidacao-pos-reuniao-inicial` (memória operacional, go/no-go e nível de confiança logo após a Demanda Inicial), `preparacao-refinamento-demanda` (prepara a reunião de Refinamento da Demanda a partir do INTENT DO PROJETO já pronto) e `cbs-completo` (orquestra as duas anteriores e gera o Cost Breakdown Structure para embasar a Proposta Comercial).
+
 ## Contexto de desenvolvimento
 
 Quando o projeto chegar à fase `04_desenvolvimento`, ler antes de qualquer mudança:
@@ -70,8 +72,8 @@ Todos em `_templates/`. Usar sempre ao criar novos artefatos:
 | `tpl-funcionalidade.md` | Nova funcionalidade no discovery (antes do refinamento) |
 | `tpl-documento-refinamento.md` | Documento de refinamento de uma funcionalidade |
 | `tpl-spec-funcionalidade.md` | Nova SPEC técnica de funcionalidade (FASE 4) |
-| `tpl-design.md` | DESIGN.md de uma jornada prototipada |
 | `tpl-roteiro-entrevista.md` | Novo roteiro de entrevista com o cliente |
+| `tpl-ux-assessment-revisao.md` | Nova avaliação heurística de UX |
 | `tpl-evidencia-teste.md` | Evidência de teste funcional |
 
 ## Regras de conduta do agente

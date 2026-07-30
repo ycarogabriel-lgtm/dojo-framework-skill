@@ -1,0 +1,21 @@
+{
+  "cliente": "Vetta Operações",
+  "produto": "Painel Zeta",
+  "consultoria": "Performa.it",
+  "publico": "operação e atendimento",
+  "avaliadores": [
+    {"nome": "Fulano da Silva", "papel": "UX & Produto — Performa.it", "email": "fulano.silva@performa.it"},
+    {"nome": "Ciclana Souza", "papel": "Performa.it", "email": ""}
+  ],
+  "data_avaliacao": "Março de 2024",
+  "oportunidades_atendidas": [
+    "O dashboard resume os indicadores mais consultados no dia a dia em um único lugar.",
+    "A tela de pedidos permite busca rápida por número de pedido."
+  ],
+  "oportunidades_nao_atendidas": [
+    "Não há sistema único de cor/status entre as telas do painel.",
+    "Faltam estados de carregamento e erro visíveis em ações assíncronas."
+  ],
+  "diagnostico_ferramenta_atual": "Um painel funcional, construído de forma incremental: cada tela resolve bem o seu problema local, mas nenhuma foi pensada em conjunto com as outras. Falta uma jornada única que atravesse o Painel Zeta: hoje são duas telas competentes isoladamente, sem uma trilha que conecte o início ao fim de uma tarefa.",
+  "diagnostico_necessidade_negocio": "Uma plataforma percebida como única e confiável pela operação: um único vocabulário visual de status, feedback claro de erro, e uma jornada contínua que não force a equipe a decidir, a cada tarefa, qual tela é a certa para começar."
+}

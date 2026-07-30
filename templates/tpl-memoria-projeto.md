@@ -19,6 +19,8 @@ Documento central que consolida todo o conhecimento gerado durante a pré-venda 
 
 ## 2. Entregáveis
 
+[Consolidar a partir da lista de Épicos/Features do CBS, quando gerado pela skill `cbs-completo` — ver `templates/tpl-cbs.md` e `templates/tpl-entregaveis-candidatos.md`.]
+
 | Entregável | Descrição | Valor de negócio |
 |---|---|---|
 | [Entregável 1] | [O que é] | [Por que importa] |

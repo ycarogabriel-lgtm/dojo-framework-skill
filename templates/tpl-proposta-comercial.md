@@ -33,11 +33,15 @@ Resultado da fase de pré-venda — ver FASE 1. Estrutura obrigatória definida 
 
 Cada entregável deve ser um bloco coeso de valor de negócio, minimamente acoplado aos demais.
 
+> Se o CBS (Cost Breakdown Structure) já tiver sido gerado pela skill `cbs-completo` (ver `templates/tpl-cbs.md`), usar os Épicos/Features e horas totais de lá como base desta tabela e do cronograma abaixo, em vez de reestimar do zero.
+
 | Entregável | Especificação funcional (resumo) | Tecnologias sugeridas |
 |---|---|---|
 | [Entregável 1] | [O que entrega] | [Stack sugerida] |
 
 ## Cronograma estimado
+
+> Prazos derivados das Horas Totais (FE + BE) do CBS — ver `templates/tpl-cbs.md` — convertidas em dias úteis (8h = 1 dia).
 
 | Fase | Entregável(is) | Prazo estimado |
 |---|---|---|
@@ -55,7 +59,7 @@ Cada entregável deve ser um bloco coeso de valor de negócio, minimamente acopl
 
 ## Investimento e condições comerciais
 
-[Valores, forma de pagamento, marcos de faturamento.]
+[Valores, forma de pagamento, marcos de faturamento — precificação a cargo do responsável pelo projeto, podendo usar as Horas Totais do CBS (`templates/tpl-cbs.md`) como referência de esforço.]
 
 ## Premissas gerais de projetos da Performa_IT
 
