@@ -71,11 +71,11 @@ Dois formatos aparecem hoje:
 timestamp:
 
 ```
-Refinamento de negócio ...-20260713_150304-Gravação de Reunião
-13 de julho de 2026, 06:03PM
-1h 8m 32s
+[Título da reunião]-[AAAAMMDD_HHMMSS]-Gravação de Reunião
+[data por extenso], [hora]
+[Xh Ym Zs]
 
-Elaine Cristina Pinto   0:03
+[Nome do Participante]   0:03
 texto da fala
 ```
 
