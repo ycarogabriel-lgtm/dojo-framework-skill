@@ -28,8 +28,8 @@ aprovado.
 |---|---|---|
 | A | `Tipo` | `Nova` ou `Ativa` |
 | B | `Situação` | `Ativa` (padrão) |
-| C | `Épico (número e nome)` | Ex: `Épico 1: Gestão de Agenda` |
-| D | `Feature/Entregável (número e nome)` | Ex: `1.1 Agenda Diária e Semanal` |
+| C | `Épico` | **Apenas o nome, sem numeração e sem a palavra "Épico".** Ex: `Gestão de Agenda` |
+| D | `Feature/Entregável` | **Apenas o nome, sem numeração.** Ex: `Agenda Diária e Semanal` |
 | E | `Descrição/Compreensão da Feature ou Entregável` | Fluxos, campos, regras de negócio |
 | F | `Horas FE (IA)` | número |
 | G | `Horas BE (IA)` | número |
@@ -159,13 +159,22 @@ previsível** — que é o que a IA colapsa —, não "quanto a IA ajuda" em abs
 - **Piso:** nenhuma feature abaixo de 2h na camada que ela toca (FE e/ou BE)
 - **Feature grande:** se FE > 24h **ou** BE > 32h na régua IA-DLC, registrar nas
   Observações: "Recomendado dividir em sub-features no backlog"
-- Épicos numerados sequencialmente sem pular; Features numeradas N.1, N.2...
+- **Sem numeração** em Épico e Feature — só o nome. Nada de `Épico 1:`, `1.1`,
+  `N.N` ou prefixo equivalente em nenhuma das duas colunas
+- A **ordem das linhas** no CSV carrega a sequência lógica de entrega, que antes
+  era carregada pela numeração: features do mesmo épico ficam contíguas, e os
+  épicos aparecem na ordem em que devem ser entregues
+- Nomes de épico e de feature devem ser **únicos** no CBS — sem o número, o nome
+  é a única chave de referência em Observações, dependências e backlog
 
 ## Validações antes de salvar
 
 - [ ] Nenhuma linha com horas = 0 sem justificativa
 - [ ] Horas Totais = FE + BE em todas as linhas
-- [ ] Todos os épicos numerados sequencialmente
+- [ ] **Nenhum prefixo de numeração** nas colunas `Épico` e `Feature/Entregável`
+      (nem `Épico 1:`, nem `1.1`, nem `N.N`)
+- [ ] Nomes de épico e de feature únicos no CBS
+- [ ] Linhas do mesmo épico contíguas, na ordem lógica de entrega
 - [ ] Nenhuma feature sem descrição
 - [ ] Features `Nova` com descrição ampliada
 - [ ] Features com integração externa têm Premissas preenchidas
@@ -182,7 +191,7 @@ previsível** — que é o que a IA colapsa —, não "quanto a IA ajuda" em abs
 
 | Épico | Horas FE | Horas BE | Horas Totais | Dias (8h/dia) |
 |---|---|---|---|---|
-| [Épico 1: Nome] | [FE] | [BE] | [Total] | [Dias] |
+| [Nome do Épico — sem numeração] | [FE] | [BE] | [Total] | [Dias] |
 
 ### Totais por fase/sistema
 

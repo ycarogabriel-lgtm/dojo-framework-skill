@@ -217,6 +217,34 @@ modelo de hipótese em ferramenta.
 8. [ ] **Pendente de decisão comercial:** definir o que fazer com propostas em
        aberto estimadas com a régua anterior.
 
+## Adendo — remoção da numeração de Épicos e Features
+
+Decisão menor, acoplada a esta mudança porque toca os mesmos arquivos.
+
+As colunas `Épico` e `Feature/Entregável` do CSV carregavam prefixos de
+numeração (`Épico 1: Gestão de Agenda`, `1.1 Agenda Diária e Semanal`). A
+numeração passa a ser **removida**: as colunas contêm apenas o nome.
+
+**Motivo:** o número é identidade duplicada e frágil. Ele não sobrevive à
+realidade do CBS — inserir um épico no meio renumera tudo abaixo, e qualquer
+referência já feita em Observações, na proposta comercial ou no backlog do Jira
+passa a apontar para a feature errada. O Jira já gera sua própria chave
+(`PIPROJETO-XXXX`), então o número do CBS nunca foi a chave de ninguém: era
+ordenação disfarçada de identificador.
+
+**O que substitui a função que a numeração cumpria:**
+- **Ordem de entrega** → a ordem das linhas no CSV, com as features do mesmo
+  épico contíguas.
+- **Referência cruzada** → o nome, que passa a ser obrigatoriamente único no CBS.
+
+Aplicado também em `templates/tpl-entregaveis-candidatos.md` e no formato de
+entregáveis descrito na ETAPA B2 da skill — sem isso a numeração voltaria pelo
+insumo que alimenta o CBS.
+
+**Consequência a observar:** CBS antigo comparado com CBS novo não casa por
+identificador. E, sem número, nome duplicado deixa de ser feio e passa a ser
+defeito — daí a validação nova.
+
 ## Links
 
 - `skills/cbs-completo/SKILL.md` — ETAPA C, geração do CBS

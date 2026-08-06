@@ -147,11 +147,12 @@ equivalente gerado por `preparacao-refinamento-demanda`) segue o formato
 artefato, caso o projeto decida rastreá-lo como entregável versionado do
 vault.
 
-Formato por feature:
+Formato por feature — **sem numeração**, apenas os nomes (é o que vai direto
+para as colunas `Épico` e `Feature/Entregável` do CSV):
 ```markdown
-## Épico N: [Nome do Épico]
+## [Nome do Épico]
 
-### N.X — [Nome da Feature]
+### [Nome da Feature]
 **Tipo:** Nova | Ativa
 **Situação:** Ativa
 **Descrição:** O que entrega, fluxos principais, campos relevantes, regras de negócio
@@ -179,8 +180,8 @@ Critérios de agrupamento a observar (herdados do conceito de Épico usado por
 |---|---|---|
 | A | `Tipo` | `Nova` ou `Ativa` |
 | B | `Situação` | `Ativa` (padrão) |
-| C | `Épico (número e nome)` | Ex: `Épico 1: Gestão de Agenda` |
-| D | `Feature/Entregável (número e nome)` | Ex: `1.1 Agenda Diária e Semanal` |
+| C | `Épico` | **Apenas o nome, sem numeração e sem a palavra "Épico".** Ex: `Gestão de Agenda` |
+| D | `Feature/Entregável` | **Apenas o nome, sem numeração.** Ex: `Agenda Diária e Semanal` |
 | E | `Descrição/Compreensão da Feature ou Entregável` | Fluxos, campos, regras de negócio |
 | F | `Horas FE (IA)` | número |
 | G | `Horas BE (IA)` | número |
@@ -315,13 +316,22 @@ daquele item é digitação de código previsível**, que é o que a IA colapsa.
 - **Piso:** nenhuma feature abaixo de 2h na camada que ela toca (FE e/ou BE)
 - **Feature grande:** se FE > 24h **ou** BE > 32h na régua IA-DLC, registrar nas
   Observações: "Recomendado dividir em sub-features no backlog"
-- Épicos numerados sequencialmente sem pular; Features numeradas N.1, N.2...
+- **Sem numeração** em Épico e Feature — só o nome. Nada de `Épico 1:`, `1.1`,
+  `N.N` ou prefixo equivalente em nenhuma das duas colunas
+- A **ordem das linhas** no CSV carrega a sequência lógica de entrega, que antes
+  era carregada pela numeração: features do mesmo épico ficam contíguas, e os
+  épicos aparecem na ordem em que devem ser entregues
+- Nomes de épico e de feature devem ser **únicos** no CBS — sem o número, o nome
+  é a única chave de referência em Observações, dependências e backlog
 
 ### Validações antes de salvar
 
 - [ ] Nenhuma linha com horas = 0 sem justificativa
 - [ ] Horas Totais = FE + BE em todas as linhas
-- [ ] Todos os épicos numerados sequencialmente
+- [ ] **Nenhum prefixo de numeração** nas colunas `Épico` e `Feature/Entregável`
+      (nem `Épico 1:`, nem `1.1`, nem `N.N`)
+- [ ] Nomes de épico e de feature únicos no CBS
+- [ ] Linhas do mesmo épico contíguas, na ordem lógica de entrega
 - [ ] Nenhuma feature sem descrição
 - [ ] Features `Nova` com descrição ampliada
 - [ ] Features com integração externa têm Premissas preenchidas

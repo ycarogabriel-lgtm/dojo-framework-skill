@@ -35,17 +35,15 @@ last_review: [data]
 
 ## Épicos e Features
 
-### Épico 1: [Nome do Épico]
+> **Sem numeração.** Épicos e features são identificados **apenas pelo nome** —
+> nada de `Épico 1:`, `1.1` ou `N.N`. Estes nomes vão direto para as colunas
+> `Épico` e `Feature/Entregável` do CSV do CBS (ver `templates/tpl-cbs.md`).
+> A **ordem** das seções carrega a sequência lógica de entrega, e o nome é a
+> única chave de referência — mantenha-os únicos neste documento.
 
-#### 1.1 — [Nome da Feature]
+### [Nome do Épico]
 
-**Tipo:** [Nova | Ativa]
-**Situação:** [Ativa]
-**Descrição:** [O que entrega, fluxos principais, campos relevantes, regras de negócio]
-**Observações:** [Dependências, riscos, integrações]
-**Premissas:** [O que precisa ser verdadeiro para esta estimativa ser válida]
-
-#### 1.2 — [Nome da Feature]
+#### [Nome da Feature]
 
 **Tipo:** [Nova | Ativa]
 **Situação:** [Ativa]
@@ -53,9 +51,17 @@ last_review: [data]
 **Observações:** [Dependências, riscos, integrações]
 **Premissas:** [O que precisa ser verdadeiro para esta estimativa ser válida]
 
-### Épico 2: [Nome do Épico]
+#### [Nome da Feature]
 
-#### 2.1 — [Nome da Feature]
+**Tipo:** [Nova | Ativa]
+**Situação:** [Ativa]
+**Descrição:** [O que entrega, fluxos principais, campos relevantes, regras de negócio]
+**Observações:** [Dependências, riscos, integrações]
+**Premissas:** [O que precisa ser verdadeiro para esta estimativa ser válida]
+
+### [Nome do Épico]
+
+#### [Nome da Feature]
 
 **Tipo:** [Nova | Ativa]
 **Situação:** [Ativa]
@@ -69,7 +75,9 @@ last_review: [data]
 
 ## Dependências entre Épicos/Features
 
-- [Feature X depende de Feature Y — motivo]
+Referenciar **pelo nome** (não há numeração para citar).
+
+- [Nome da Feature] depende de [Nome da Feature] — [motivo]
 
 ## Próximo passo
 
