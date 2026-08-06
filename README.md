@@ -28,7 +28,7 @@ Alternativa sem plugin nem zip: copiar manualmente a pasta de uma skill (ex. `sk
 | `skills/dojo/` | Metodologia central: mapa de fases, gate de desenvolvimento, detecção de tipo de workspace (`workspace-detection.md`) e bootstrap de projeto novo (`project-bootstrap.md`). |
 | `skills/consolidacao-pos-reuniao-inicial/` | Consolida a Demanda Inicial (1ª reunião) em memória operacional de pré-venda: contexto do cliente, hipóteses estratégicas, lacunas, log de decisões, análise de go/no-go e nível de confiança, além de preparar a pauta da Refinamento da Demanda. Complementar ao Intent Listener/Persona Generator/Intent Refiner, não um substituto. |
 | `skills/preparacao-refinamento-demanda/` | Sintetiza o contexto de pré-venda já coletado (INTENT DO PROJETO, discovery, histórico do cliente) para preparar objetivamente a reunião de Refinamento da Demanda. |
-| `skills/cbs-completo/` | Orquestrador fino que encadeia as duas skills acima e adiciona a análise de navegação de telas + geração do CBS (Cost Breakdown Structure): CSV de horas FE/BE pronto para embasar a proposta comercial. |
+| `skills/cbs-completo/` | Orquestrador fino que encadeia as duas skills acima e adiciona a análise de navegação de telas + geração do CBS (Cost Breakdown Structure): CSV de horas FE/BE pronto para embasar a proposta comercial. Estima na régua **IA-DLC** — ver a nota abaixo. |
 | `skills/design-md-generator/` | Gera o `DESIGN.md` do projeto (Design System em tokens machine-readable + racional) referenciado pela FASE 2 (Etapa 4) e por `templates/tpl-design.md`. |
 | `skills/ux-assessment-heuristico/` | Avaliação heurística de UX de um produto existente: pontuação por 5 áreas fixas, matriz de risco 2×2, e os 3 entregáveis sequenciais (revisão em Markdown → matriz XLSX → HTML final), com gate de aprovação humana entre eles. |
 | `skills/normalizacao-transcricao/` | Converte transcrição bruta de reunião (Teams, `.docx`/`.txt`) no documento estruturado padrão do vault. |
@@ -36,6 +36,15 @@ Alternativa sem plugin nem zip: copiar manualmente a pasta de uma skill (ex. `sk
 | `skills/geracao-ata-reuniao/` | Converte o documento estruturado de uma reunião em ATA executiva (`.docx`). |
 | `templates/` | Ver tabela abaixo. |
 | `assets/` | Guias de fase (FASE 1–4), specs dos agentes AI-DLC de pré-venda (Intent Listener/Refiner, Persona Generator) e config genérica do Obsidian (`obsidian-config/`). |
+| `docs/adr/` | Decisões de arquitetura **do próprio framework** (não de projeto de cliente) — o porquê de mudanças estruturais no pacote. |
+
+## Régua de estimativa do CBS (a partir da v0.2.0)
+
+O CBS deixou de usar uma tabela plana rotulada "com IA" e passou a estimar por um **modelo de alavancagem explícito**: cada tipo de tela/operação tem uma coluna `Base` (convencional) e uma coluna `IA-DLC`, com o fator entre elas visível na própria linha. O fator varia por categoria de trabalho — de **0,35×** onde a IA colapsa o esforço (auth, CRUD, formulário, listagem) a **0,75×** onde o gargalo é externo e empírico (migração de dados, integração complexa com terceiro) — em vez de um desconto único e opaco.
+
+Três guardas acompanham a régua nova: um **fator de reúso** (o 4º componente do mesmo padrão custa metade do 1º), um **piso de 2h por camada tocada** (ler a SPEC, revisar o que o agente gerou, validar e aprovar não desaparece) e um **gate de pré-condições** — a coluna IA-DLC só vale se `DESIGN.md`, `CONTEXT.md`/`AGENT_RULES.md`, SPEC por funcionalidade e time treinado em AI-DLC estiverem no lugar. O que falhar no gate volta para a coluna Base. É isso que torna o número baixo defensável: ele é o preço de um caminho de entrega específico, não otimismo.
+
+**Atenção ao comparar propostas:** CBS gerado antes da v0.2.0 está em outra régua. Proposta em aberto estimada na régua antiga não deve ser reemitida sem revisão. Racional completo, alternativas descartadas e o plano de recalibração por realizado em [`docs/adr/ADR-001-calibracao-ia-dlc-cbs.md`](docs/adr/ADR-001-calibracao-ia-dlc-cbs.md).
 
 ### `templates/`
 
